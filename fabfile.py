@@ -58,3 +58,7 @@ def publish():
         local_dir=DEPLOY_PATH.rstrip('/') + '/',
         delete=True
     )
+
+@task
+def to_github():
+    os.system("ghp-import -m 'Push site' -b master -p output/")
